@@ -1,0 +1,36 @@
+<!--
+    적정체중 = (본인신장 - 100) * 0.9
+
+    신장: 180(cm)
+    체중: 74(kg)
+    적정 체중: (180-100) x 0.9 = 72(kg)
+    결과: 적정 체중은 72kg이며, 현재 적정 체중에서 2kg 초과한 것을 알 수 있습니다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var user_height = prompt("당신의 키는?", 150);
+        var user_weight = prompt("당신의 몸무게는?", 70);
+
+        var normal_weight = (user_height - 100) * 0.9;
+
+        var result = "적정 체중은 " + normal_weight + "이며, "
+        result += (normal_weight < user_weight) ? "현재 적정 체중에서 " + (user_weight - normal_weight) + "kg 초과한 것을 알 수 있습니다." : "적정 체중입니다.";
+
+        document.write(normal_weight + " " + user_weight + " " + result);
+        document.write();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!--
+
+    산술연산자
+    1. +, -, *, /, %가 있다.
+
+    문자결합연산자
+    1. +가 있습니다. 문자 + 문자, 문자 + 숫자로 일반적으로 사용합니다.
+
+    대입연산자
+    1. =, +=, *=, /=, %= 등이 있습니다.
+
+    증감연산자
+    1. ++, --가 있습니다. 변수++, ++변수, 변수--, --변수로 사용합니다.
+
+    비교연산자
+    1. >, <, >=, <=, ==, !=, ===, !== 등이 있다.
+
+    논리연산자
+    1. ||, &&, ! 등이 있다.
+
+    삼항조건연산자
+    1. 조건식 ? 자바스크립트코드1 : 자바스크립토코드2
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //산술 연산자
+        var num1 = 10;
+        var num2 = 4;
+        var result;
+        var br = "<br>";
+        result = num1 + num2;
+        document.write(result + br);
+        result = num1 - num2;
+        document.write(result + br);
+        result = num1 * num2;
+        document.write(result + br);
+        result = num1 / num2;
+        document.write(result + br);
+        result = num1 % num2;
+        document.write(result + br);
+
+        //문자 연산자
+        var t1 = "학교종이";
+        var t2 = " 땡땡땡";
+        var t3 = "어서 모이자"
+        var result;
+        result = t1 + t2 + t3;
+        document.write(result + br);
+
+        //대입 연산자
+        var num1 = 10;
+        var num2 = 3;
+
+        num1 += num2;
+        document.write(num1 + br);
+
+        num1 -= num2;
+        document.write(num1 + br);
+
+        num1 *= num2;
+        document.write(num1 + br);
+
+        num1 %= num2;
+        document.write(num1 + br);
+
+        //증감연산자
+        var num1 = 10;
+        var num2 = 20;
+        var result;
+
+        num1--;
+        document.write(num1 + br);
+
+        num1++;
+        document.write(num1 + br);
+
+        document.write("연산전 : " + num2 + br)
+        result = num2++;
+        document.write(result + br);
+
+        document.write("연산전 : " + num2 + br)
+        result = ++num2;
+        document.write(result + br);
+
+
+        //비교 연산자
+        var a = 10;
+        var b = 20;
+        var c = 10;
+        var f = "20";
+        var result;
+
+        result = a > b;
+        document.write(a + " > " + b + " : " + result + br);
+
+        result = a >= b;
+        document.write(a + " >= " + b + " : " + result + br);
+
+        result = b > a;
+        document.write(b + " > " + a + " : " + result + br);
+
+        result = b >= a;
+        document.write(b + " >= " + a + " : " + result + br);
+
+        result = b == f;
+        document.write(b + " == " + f + " : " + result + br);
+
+        result = b != f;
+        document.write(b + " != " + f + " : " + result + br);
+
+        result = b === f;
+        document.write(b + " === " + f + " : " + result + br);
+
+        result = b !== f;
+        document.write(b + " !== " + f + " : " + result + br);
+
+        //논리연산자
+        var a = 10;
+        var b = 20;
+        var m = 30;
+        var n = 40;
+        var result;
+
+        document.write("a : " + a + "/ b : " + b + "/ m : " + m + "/ n : " + n + br);
+        result = a > b || b >= m || m > n;
+        document.write("(a > b || b >= m || m > n) : " + result + br);
+        result = a > b || b >= m || m <= n;
+        document.write("(a > b || b >= m || m <= n) : " + result + br);
+        result = a <= b && b >= m && m <= n;
+        document.write("(a <= b && b >= m && m <= n) : " + result + br);
+
+        //삼항조건연산자
+        var a = 10;
+        var b = 3;
+        var result = a > b ? "javascript" : "hello";
+        document.write(result);
+    </script>
+</body>
+
+</html>
