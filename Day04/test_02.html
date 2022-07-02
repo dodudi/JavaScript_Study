@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function testAvg(arrData) {
+            var sum = 0;
+            for (var data in arrData) {
+                var score = prompt("이 과목의 점수는?", "");
+                console.log(score);
+                sum += Number(score);
+            }
+            console.log(sum);
+            return sum;
+        }
+
+        var arrSubject = ["국어", "수학"];
+        var result = testAvg(arrSubject);
+        document.write("평균 점수는 " + (result / arrSubject.length) + "점 입니다.");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
