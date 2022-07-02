@@ -1,0 +1,63 @@
+<!--
+
+    함수
+    1. 자바스크립트 코드를 저장합니다.
+    2. function이라는 키워드로 선언합니다.
+    3. 출력문, 제어문 등의 코드를 저장하고 데이터를 반환합니다.
+
+    일반함수, 익명함수의 차이점
+    1. 일반함수정의는 호이스팅을 지원합니다. 호이스팅을 적용하면 함수 정의문보다 후출문이 먼저 나와도 함수 정의문을 끌어올려 함수를 호출합니다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //일반함수
+        var count = 0;
+        myFnc();
+
+        function myFnc() {
+            count++;
+            document.write("hello" + count, "<br>");
+        }
+
+
+        //익명함수
+        // var count = 0;
+        // myFnc(); //에러
+        // var myFnc = function () {
+        //     count++;
+        //     document.write("hello" + count, "<br>");
+        // }
+
+        //매개변수가 있는 함수
+        function myFnc1(name, area) {
+            document.write("안녕하세요. " + name + "입니다.", "<br>");
+            document.write("사는 곳은 " + area + "입니다.", "<br>");
+        }
+
+
+        //매개변수가 없는 함수
+        function sum() {
+            var result = arguments[0] + arguments[1] + arguments[2];
+            document.write(result + "nice", "<br>");
+        }
+        myFnc();
+        myFnc1('이름', '집');
+        sum(1, 2, 3);
+    </script>
+</head>
+
+
+<body>
+
+</body>
+
+</html>

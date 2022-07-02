@@ -1,0 +1,139 @@
+<!--
+
+    브라우저 객체 모델
+    1. window는 브라우저 객체의 최상위 객체이며, window 객체에는 하위 객체가 포함되어 있다.
+    2. 개층구조로 이루어져 있다.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //window객체
+        document.write("<h1>window 객체</h1>");
+        document.write("window.open(url, 창이름, 새창옵션(width, height, left, top, scrollbars, 등)) : url 페이지를 새 창으로 나타냅니다.<br>");
+        document.write("alert(데이터) : 경고창을 나타내고 데이터를 보여줍니다. 확인 버튼을 누르면 alert를 사용한 다음 코드를 수행<br>");
+        document.write("prompt(질문,답변) : 질문과 답변으로 질의응답 창을 나타냅니다.<br>");
+        document.write("confirm(질문 내용) : 질문 내용으로 확인이나 취소 창을 나타냅니다. 확인 버튼을 누르면 true를 반환합니다.<br>");
+        document.write("moveTo(x,y) : 지정한 새 창의 위치를 이동합니다.<br>");
+        document.write("setInterval(functino(){코드}) : 지속적으로 일정한 시간 간격으로 함수를 호출하여 코드를 수행합니다.<br>");
+        document.write("setTimeout(function(){코드}) : 단 한 번 일정한 시간 간격으로 함수를 호추하여 코드를 실행합니다.<br>");
+
+        window.onload = function () {
+            var openButton = document.getElementById("windowOpen");
+            openButton.onclick = function () {
+                window.open("test_01.html", "naver", "width=300, height=400, left=300, top=50");
+            }
+
+            var alertButton = document.getElementById("windowAlert");
+            alertButton.onclick = function () {
+                window.alert("이것은 경고창입니다.");
+            }
+
+            var promptButton = document.getElementById("windowPrompt");
+            promptButton.onclick = function () {
+                var data = window.prompt("데이터를 입력하세요", "");
+                var getP = document.getElementById("inputP");
+                //document.write(data + "-> 를 입력하셧습니다.<br>");
+                getP.innerHTML = data;
+            }
+
+            var confrimButton = document.getElementById("windowConfirm");
+            confrimButton.onclick = function () {
+                var data = window.confirm("정말로 삭제하시겟습니까?");
+                var confirmP = document.getElementById("confirmP");
+
+                confirmP.innerHTML = data;
+            }
+
+            var intervalButton = document.getElementById("windowInterval");
+            intervalButton.onclick = function () {
+                var intervalP = document.getElementById("intervalP");
+                var i = 0;
+                interval = window.setInterval(function () {
+                    intervalP.innerHTML = i;
+                    i++;
+                }, 1000);
+            }
+
+            var clearIntervalButton = document.getElementById("windowClearInterval");
+            clearIntervalButton.onclick = function () {
+                window.clearInterval(interval);
+            }
+
+            var setTimeOutButton = document.getElementById("windowSetTimeout");
+            setTimeOutButton.onclick = function () {
+                var setTimeout1 = window.setTimeout(function () {
+                    var setTimeOutP = document.getElementById("setTimeOutP");
+                    setTimeOutP.innerHTML = "1초가 지닜어";
+                }, 1000);
+            }
+        }
+
+        //screen객체
+        document.write("<h1>screen 객체</h1>");
+        document.write("screen.width : 화면의 너비값 반환 " + screen.width + "<br>");
+        document.write("screen.height : 화면의 높이값 반환 " + screen.height + "<br>");
+        document.write("screen.availWidth : 작업 표시줄을 제외한 화면의 너비값을 반환 " + screen.availWidth + "<br>");
+        document.write("screen.availHeight : 작업 표시줄을 제외한 화면의 높이값을 반환 " + screen.availHeight + "<br>");
+        document.write("screen.colorDepth : 사용자 모니터가 표현 가능한 컬러 bit를 반환 " + screen.colorDepth + "<br>");
+
+        document.write("<h1>location 객체</h1>");
+        document.write("location.href : 주소 영역의 참조 주소를 설정하거나 반환받는다. " + location.href + "<br>");
+        document.write("location.hash : url의 해시값(#에 명시된 값)을 반환합니다. " + location.hash + "<br>");
+        document.write("location.hostname : url의 호스트 이름을 설정하거나 반환합니다. " + location.hostname + "<br>");
+        document.write("location.host : url의 호스트이름과 포트 번호를 반환합니다. " + location.host + "<br>");
+        document.write("location.protocol : url의 프로토콜을 반환합니다. " + location.protocol + "<br>");
+        document.write("location.search : url의 쿼리(요청값)을 반환합니다. " + location.search + "<br>");
+        document.write("location.reload : 마치 브라우저에서 f5를 누른 것 처럼 새로 고침합니다." + +"<br>");
+
+        document.write("<h1>history 객체</h1>");
+        document.write("history.back() : 이전 방문 사이트로 이동합니다. " + "<br>");
+        document.write("history.forward(): 다음 방문 사이트로 이동합니다. " + "<br>");
+        document.write("history.go(이동숫자) : 이동숫자에 -2를 입력하면 2단계 이전의 방문 사이트로 이동합니다." + "<br>");
+        document.write("history.length : 방문 기록에 저장된 목록의 개수를 반환합니다. " + "<br>");
+
+        document.write("<h1>navigator 객체</h1>");
+        document.write("navigator.appCodeName : 현재 브라우저의 코드명을 반환합니다. " + navigator.appCodeName + "<br>");
+        document.write("navigator.appName : 현재 브라우저의 이름을 반환합니다. " + navigator.appName + "<br>");
+        document.write("navigator.appVersion : 현재 브라우저의 버전 정보를 반환합니다. " + navigator.appVersion + "<br>");
+        document.write("navigator.language : 현재 브라우저가 사용하는 언어를 반환합니다. " + navigator.language + "<br>");
+        document.write("navigator.product : 현재 브라우저의 엔진 이름을 반환합니다. " + navigator.product + "<br>");
+        document.write("navigator.platform : 현재 컴퓨터의 운영체제 정보를 제공합니다. " + navigator.platform + "<br>");
+        document.write("navigator.onLine : 온라인 상태 여부에 대한 정보를 제공합니다. " + navigator.onLine + "<br>");
+        document.write("navigator.userAgent : 브라우저와 운영체제의 종합 정보를 제공합니다. " + navigator.userAgent + "<br>");
+
+        
+    </script>
+</head>
+
+
+<body>
+    <button id="windowOpen">윈도우 open 버튼입니다.</button>
+    <br>
+    <button id="windowAlert">윈도우 alert 버튼입니다.</button>
+    <br>
+
+    <button id="windowPrompt">윈도우 prompt</button>
+    <p id="inputP"></p>
+
+    <button id="windowConfirm">윈도우 confirm</button>
+    <p id="confirmP"></p>
+
+    <button id="windowInterval">윈도우 setInterval</button>
+    <p id="intervalP"></p>
+    <button id="windowClearInterval">윈도우 clearInterval</button>
+    <br>
+
+    <button id="windowSetTimeout">윈도우 setTimeout</button>
+    <p id="setTimeOutP"></p>
+
+</body>
+
+</html>
