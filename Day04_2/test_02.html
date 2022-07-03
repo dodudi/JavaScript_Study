@@ -1,0 +1,44 @@
+<!--
+
+    선택자
+    1. 제이쿼리 선택자는 css선택자와 마찬가지로 선택한 요소의 디자인 속성을 적용할 때 사용할 수 있습니다.
+    2. HTML에 작성한 스타일은 사용자의 동작에 의해 스타일을 변경할 수 없어 정적이다 라고 하며 제이쿼리는 동적이다 라고합니다.
+
+    문서객체모델(DOM)
+    1. 문서객체모델이란 HTML 문서 객체 구조를 말한다.
+    2. HTML문서의 기본 객체 구조는 최상위 객체인 <html>이 있다. 하위 객체로 <head> <body>가 있습니다.
+    3. <body>태그는 문단 태그, 테이블 태그, 폼 태그 등을 포함할 수 있습니다.
+    4. 이때 문서 객체 모델에서는 모든 태그를 객체라 부르며, 태그에는 기능과 속성이 포함되어있습니다.
+
+    선택자 사용하기
+    1. $("CSS 선택자").css("스타일 속성명", "값");
+    2. $("CSS 선택자").attr("속성명", "값");
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+    <script>
+
+        $(function () {
+            $("#title").css("color", "red");
+        })
+
+    </script>
+</head>
+
+<body id="theBody">
+
+    <h1 id="title">제목</h1>
+
+</body>
+
+
+</html>
