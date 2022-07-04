@@ -12,19 +12,19 @@
     <script>
 
         $(function () {
+
             var style_1 = {
-                "background-color": "#0ff",
-                "border": "2px solid #f00"
+                "bakcground-color": "#0ff",
+                "border": "2px solid red"
             }
 
             var style_2 = {
-                "bakcground-color": "#ff0",
-                "border": "2px dashed #f00"
+                "bakcground-color": "#0ff",
+                "border": "2px solid blue"
             }
 
-            $(".txt").prev().css(style_1);
-            $(".txt + p").css(style_2);
-            $(".txt").next().next().css(style_2);
+            $(".txt").prevAll().css(style_1);
+            $(".txt").nextAll().css(style_2);
         });
 
     </script>
@@ -32,7 +32,6 @@
 
 <body>
     <div id="wrap">
-
         <h1>인접 관계 선택자</h1>
         <p>내용1</p>
         <p class="txt">내용2</p>

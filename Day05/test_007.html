@@ -1,0 +1,59 @@
+<!--
+
+    제이쿼리 탐색 선택자
+    1. 기본 선택자로 선택한 요소 중 원하는 요소를 한 번 더 탐색해 정확하게 선택할 수 있습니다.
+    2. 위치탐색선택자와 속성탐색선택자가 있습니다.
+
+
+    위치탐색선택자
+    1. $("li:first"), $("li").first() -> 전체 li 요소중 첫 번째 요소만 선택합니다.
+    2. $("li:last"), $("li").last() -> 전체 li 요소중 마지막 요소만 선택합니다.
+    3. $("li:odd") -> li요소 무리 중 짝수 번째(홀수 인덱스) 요소만 선택합니다.
+    4. $("li:even") -> li요소 무리 중 홀수 번째(짝수 인덱스) 요소만 선택합니다.
+    5. $("li:first-of-type") -> li요소 무리중 첫 번째요소만 선택합니다.
+    5. $("li:last-of-type") -> li요소 무리중 마지막 요소만 선택합니다.
+    6. $("li:nth-child(3)") -> li요소 무리중 세 번쨰 요소만 선택합니다.
+    7. $("li:nth-last-of-type(2)") -> li요소 무리중 마지막 위치로부터 두 번쨰에 있는 요소만 선택합니다.
+    8. $("li:only-child") -> 부모 요소 내에 li요소가 1개뿐인 li요소만 선택합니다.
+    9. $("li:eq(2)") -> li요소 중 인덱스 2가 참조하는 요소를 불러옵니다.
+    10. $("li:lt(1)") -> li요소 중 인덱스 1보다 작은 인덱스가 참조하는 요소를 불러옵니다.
+    11. $("li:gt(1)") -> li요소 중 인덱스 1보다 큰 인덱스가 참조하는 요소를 불러옵니다.
+    12. $("li").slice(2) -> li요소 중 인덱스 2부터 참조하는 요소를 불러옵니다. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+
+    <script>
+
+        $(function () {
+            $("#menu li:first-of-type").css("background-color", "red");
+            $("#menu li:last-of-type").css("background-color", "yellow");
+            $("#menu li:nth-of-type(3)").css("background-color", "green");
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <h1>탐색 연산자</h1>
+    <ul id="menu">
+
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+        <li>내용4</li>
+    </ul>
+
+</body>
+
+</html>
