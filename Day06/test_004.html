@@ -1,0 +1,80 @@
+<!--
+
+    속성탐색선택자
+    1. 선택한 요소를 기준으로 일치하는 속성의 포함 여부를 따져 요소를 선택하는 선택자입니다.
+    2. 예를 들어 선택한 이미지(img)요소 중 경로(src)가 [images/logo.gif]와 일치하는 이미지 요소만 선택하고자 할 떄 사용.
+
+    종류
+    1.  $("li[title]") -> li요소중 title 속성이 포함된 요소만 선택합니다.
+    2.  $("li[title='리스트']") -> li요소중 title 속성값이 '리스트'인 요소만 선택합니다.
+    3.  $("a[href^='http://']") -> li요소중 title 속성값이 'http://'로 시작하는 요소만 선택합니다.
+    4.  $("a[href$='.com']")    -> ㅣㅑdyth wnd ㅗㄱㄷㄹ thrtjdrkqtdl '.com'으로 끝나는 요소만 선택합니다.
+    5.  $("a[href*='easyspub']")-> li요소중 href 속성값 중에서 'easyspub'을 포함하는 요소만 선택합니다.
+    6.  $("li:hidden")          -> li요소중 숨겨져 있는 요소만 선택합니다.
+    7.  $("li:visible")         -> li요소중 보이는 요소만 선택합니다.
+    8.  $(":text")              -> input요소 중 type 속성값이 text인 요소만 선택합니다.
+    9.  $(":selected")          -> selected 속성이 적용된 요소만 선택합니다. 
+    10. $(":checked")           -> checked 속성이 적용된 요소만 선택합니다.
+    11. $("li:contains('내용2')") -> li요소중 내용2라는 텍스트ㅡㄹ 포함하는 요소만 선택합니다.
+    12. $("p").contents()       -> 선택한 요소의 하위 요소 중 가장 가까운 하위 요소를 선택합니다.
+    13. $("li:has('span')")     -> li요소중 span을 포함하는 요소만 선택합니다.
+    14. $("li:not(:first)")     -> li요소중 첫 번쨰 요소만 제외하고 선택합니다.
+    15. $("li").filter(".list2")-> li요소중 class 값이 "list2"인 요소만 선택합니다.
+    16. $("li").find("strong")  -> li요소의 하위 요소인 strong만 선택합니다.
+    17. $("strong").closest("div") -> strong을 감싸는 상위 div 요소 중 가장 가까운 상위 요소를 선택합니다.
+    18. $("li").children("a").end()-> 필터링이 실행되기 이전의 요소인 li가 선택됨니다.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+
+    <script>
+
+        $(function () {
+            //find와 filter의 차이
+            $("#inner_1").find(".txt1").css({ "background-color": "#ff0" });
+            $("#inner_1 p").filter(".txt2").css({ "background-color": "green" });
+
+            $("#inner_2 p").filter(function (idx, obj) {
+                console.log(idx);
+                return idx % 2 == 0;
+            }).css({ "background-color": "#0f0" });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="outer_wrap">
+
+        <h1>콘텐츠 탐색 선택자</h1>
+        <section id="inner_1">
+
+            <h2>find(), filter()</h2>
+            <p class="txt1">내용1</p>
+            <p class="txt2">내용2</p>
+
+        </section>
+
+        <section id="inner_2">
+
+            <h1>filter(function)</h1>
+            <p>index 0</p>
+            <p>index 1</p>
+            <p>index 2</p>
+            <p>index 3</p>
+
+        </section>
+    </div>
+</body>
+
+</html>
