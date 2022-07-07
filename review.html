@@ -1,0 +1,53 @@
+<!--
+
+    공부하고 이해하기 어려운 부분을 복습해보자.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="jquery.js"></script>
+
+    <script>
+
+        //객체생성
+        var tv = new Object();
+        tv.color = "white";
+        tv.price = 30000;
+        tv.info = function () {
+            document.write("색상은: " + tv.color + " 가격은: " + tv.price);
+        }
+
+        tv.info();
+
+        //배열객체
+        var data = new Array();
+        data[0] = 30;
+        data[1] = "따르릉";
+        data[2] = true;
+
+        document.write(data.join("=-"));
+        document.write(data.reverse() + "<br>");
+        document.write(data.slice(0, 2) + "<br>");
+        document.write(data.splice(0, 2, 10, 20, "a") + "<br>");
+        document.write(data + "<br>");
+        document.write((data.pop()) + "<br>");
+        document.write(data +"<br>");
+        document.write((data.push('abcd')) + "<br>");
+        document.write(data +"<br>");
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
