@@ -1,0 +1,85 @@
+<!--
+
+    이벤트 등록 메서드
+    1. 하나의 이벤트만 등록할 수 있는 단독 이벤트 등록 메서드, 2개 이상의 이벤트를 등록할 수 있는 그룹 이벤트 등록 메서드가 있습니다.
+    2. 단독 이벤트 등록 메서드는 한 동작에 대한 이벤트를 등록할 때 사용하는 메서드.
+    
+    에러이벤트
+    1.  load()
+    2.  ready()
+    3.  error()
+
+    마우스이벤트
+    1.  click()
+    2.  dblclick()
+    3.  mouseout()
+    4.  mouseover()
+    5.  hover()
+    6.  mousedown()
+    7.  mouseup()
+    8.  mouseenter()
+    9.  mouseleave()
+    10. mousemove()
+    11. scroll()
+
+    포커스이벤트
+    1.  focus()
+    2.  focusin()
+    3.  focusout()
+    4.  blur()
+    5.  change()
+
+    키보드이벤트
+    1.  keypress()
+    2.  keydown()
+    3.  keyup()
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+    <script>
+
+        $(function () {
+            $('#btn1').on("mouseover focus", function () {
+                console.log("welcom");
+            });
+
+            $('#btn2').on({
+                "mouseover focus": function () {
+                    console.log("welcom 2");
+                }
+            });
+
+            $('#btn3').on({
+                "mouseover": function () {
+                    console.log("welcom3");
+                },
+
+                "focus": function () {
+                    console.log("welcom4");
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <button id="btn1">버튼</button>
+    <button id="btn2">버튼</button>
+    <button id="btn3">버튼</button>
+
+</body>
+
+</html>
