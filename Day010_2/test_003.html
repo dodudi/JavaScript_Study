@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+    <script>
+
+        $(function () {
+
+            $('.btn_1').on("mouseover", function () {
+                alert("hello!");
+            });
+
+            $(document).on("mouseover", ".btn_2", function () {
+                alert("welcome");
+            });
+
+            //라이브로 등록했으니 이벤트 등록이됨.
+            var btn_2 = $("<p><button class=\"btn_2\">버튼2</button></p>");
+            $("#wrap").append(btn_2);
+
+
+            $('.del_1').on("click", function () {
+                $('.btn_1').off("mouseover");
+            });
+
+            $('.del_2').on("click", function () {
+                //생성되기전에 이벤트를 등록하기에 이것도 라이브로 삭제해줘야함.
+                $(document).off("mouseover", ".btn_2");
+            });
+
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <p><button class="btn_1">버튼1</button></p>
+    </div>
+
+    <p>
+
+        <button class="del_1">버튼1 이벤트 해제</button>
+        <button class="del_2">버튼2 이벤트 해제</button>
+
+    </p>
+</body>
+
+</html>

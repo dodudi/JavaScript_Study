@@ -1,0 +1,56 @@
+<!--
+
+    그룹이벤트등록메서드
+    1.  on()        : 이벤트 대상 요소에 2개 이상의 이벤트를 등록합니다. 사용 방식에 따라 이벤트를 등록한 이후에도 동적으로 생성되거나 복제된 요소에도 이벤트가 적용됩니다.
+    2.  bind()      : 이벤트 대상 요소에 2개 이상의 이벤트를 등록합니다.
+    3.  delegate()  : 선택한 요소의 하위 요소에 이벤트를 등록합니다. 이벤트를 등록한 이후에도 동적으로 생성하거나 복제된 요소에도 이벤트가 적용됩니다.
+    4.  one()       : 이벤트 대상 요소에 1개 이상의 이벤트를 등록합니다. 지정한 이벤트가 1회 발생하고 자동으로 해제됩니다.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+    <script>
+
+        $(function () {
+
+            //이벤트 등록후 class를 선택해도 이벤트 등록이 안됨.
+            $('.btn_1.on').on("mouseover focus", function () {
+                alert("hello!");
+            });
+
+            $('.btn_1').addClass("on");
+
+
+            //라이브 이벤트 등록 방식으로 하면 된다.
+            $(document).on("mouseover focus", ".btn_2.on", function () {
+                alert("welcome2");
+            });
+            $('.btn_2').addClass("on");
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <p><button class="btn_1">버튼1</button></p>
+        <p><button class="btn_2">버튼2</button></p>
+
+
+    </div>
+
+</body>
+
+</html>

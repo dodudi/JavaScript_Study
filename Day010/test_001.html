@@ -1,0 +1,67 @@
+<!--
+
+    이밴트 객체의 종류
+    
+    마우스이벤트
+    1.  clientX     : 마우스 포인터의 x 좌표를 반환
+    2.  clientY     : 마우스 포인터의 y 좌표를 반환
+    3.  pageX       : 스크롤 x축의 이동한 거리를 계산하여 마우스 포인터의 x 좌표를 반환
+    4.  pageY       : 스크롤 y축의 이동한 거리를 계산하여 마우스 포인터의 y 좌표를 반환
+    5.  screenX     : 화면 모니터를 기준으로 마우스 포인터의 x 좌표를 반환
+    6.  screenY     : 화면 모니터를 기준으로 마우스 포인터의 y 좌표를 반환
+    7.  layerX      : position을 적용한 기준으로 마우스 포인터의 x 좌표 반환
+    8.  layerY      : position을 적용한 기준으로 마우스 포인터의 y 좌표 반환
+    9.  button      : 마우스 버튼의 종류에 따라 값을 반환(0 : 왼쪽, 1 : 휠, 2 : 오른쪽)
+
+    키보드이벤트
+    1.  keyCode     : 키보드의 아스키 코드값을 반환
+    2.  altKey      : 이벤트 발생 시 alt 키가 눌렸으면 true 반환
+    3.  ctrlKey     : 이벤트 발생 시 ctrl 키가 눌렸으면 true 반환
+    4.  shiftKey    : 이벤트 발생 시 shift 키가 눌렸으면 true 반환
+
+    전체이벤트
+    1.  target      : 이벤트가 전파된 마지막 요소를 가리킵니다.
+    2.  cancelBubble: 이벤트의 전파를 차단하는 속성, 기본값은 false이다. true로 설정하면 전파가 차단됩니다.
+    3.  stopPropagation : 이벤트의 전파를 차단합니다.
+    4.  preventDefault : 기본 이벤트를 차단합니다. 
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jquery.js"></script>
+
+    <script>
+
+        $(window).on("scroll", function () {
+            var sc_top = $(this).scrollTop();
+            var sc_left = $(this).scrollLeft();
+
+            $('.top').text(sc_top);
+            $('.left').text(sc_left);
+        });
+
+    </script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+
+        <p> scrollTop: <span class="top">0</span> </p>
+        <p> scrollLeft: <span class="left">0</span> </p>
+
+    </div>
+</body>
+
+</html>
