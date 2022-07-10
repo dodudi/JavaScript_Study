@@ -1,0 +1,38 @@
+<!--
+
+    Ajax 메서드
+    1. load()                           : 외부 콤텐츠를 가져올 때 사용.
+    2. $.ajax()                         : 데이터를 서버에 http post, get 방식으로 전송가능. html, xml, json, 텍스트 유형에 데이터를 요청가능 3,4,5번의 기능이 합쳐져있다.
+    3. $.post()                         : 데이터를 서버에 http post 방식으로 전솧안 후 서버 측의 응답을 받을 때 사용.
+    4. $.get()                          : 데이터를 서버에 http get 방식으로 전송한 후 서버 측의 응답을 받을 때 사용.
+    5. $.getJSON()                      : 데이터를 서버에 http get 방식으로 전송한 후 서버 측의 응답을 JSON 형식으로 받을 떄 사용.
+    6. $.getScript()                    : Ajax를 이용하여 외부 자바스크립트를 불러옵니다.
+    7. .ajaxStop(function(){...})       : 비동기 방식으로 서버에 응답 요청이 완료되었을 떄 함수가 실해오딥니다.
+    8. .ajaxSuccess(function(){...})    : ajax 요청이 성공적으로 완료되면 함수가 실행됩니다.
+    9. ajaxComplete(function(){...})    : Ajax 통신이 완료되면 함수가 실행됩니다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="news_1">nice nicenicencienianweclawejfklawejfklawejfklawejfklawejfklawejflkawejkflajwefjaweklf
+        awefajwefkl;ajwel;kfjal;kwdjfal;ksdjflakwejfkljqkwlerjlqkwerjkl qwekrlj qjrklqwej rklqwej rklqwejrklejrklwq ejr
+        qwejrlkwekr er weqjrklwejrklqwjrlkqwejrkl wqr we rwer qwer klwjr lkqwerlkqwejrlkqwejrkl
+    </p>
+
+    <p id="news_2">nice nicenicencienianweclawejfklawejfklawejfklawejfklawejfklawejflkawejkflajwefjaweklf
+        awefajwefkl;ajwel;kfjal;kwdjfal;ksdjflakwejfkljqkwlerjlqkwerjkl qwekrlj qjrklqwej rklqwej rklqwejrklejrklwq ejr
+        qwejrlkwekr er weqjrklwejrklqwjrlkqwejrkl wqr we rwer qwer klwjr lkqwerlkqwejrlkqwejrkl
+    </p>
+</body>
+
+</html>

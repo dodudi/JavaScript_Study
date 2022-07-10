@@ -1,0 +1,50 @@
+<!--
+    PHP로 교차 도메인 데이터 불러오기
+    1. 서버언어인 PHP를 사용해 교차 도메인 데이터(XML)을 불러오겠습니다.
+    2. PHP언어는 서버가 서로 통신할 수 있는 cURL메서드를 지원합니다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="jquery.js"></script>
+    <script>
+        //동일출처원칙 에러
+        $(function () {
+            $.ajax({
+                url: "test_007P.php",
+                dataType: "xml",
+                success: function (data) {
+                    var $items = $(data).find("item");
+                    if ($items.length > 0) {
+                        $items = $items.slice(0, 10);
+                        var $ulTag = $("<ul/>");
+                        $.each($items, function (i, o) {
+                            var $title = $(o).find("title").text();
+                            var $link = $(o).find("link").text();
+
+                            var $aTag = $("<a/>").attr({ "href": $link, "target": "_blank" }).text($title);
+                            var $liTag = $("<li/>").append($aTag);
+                            $ulTag.append($liTag);
+                        });
+
+                        $(".wrap").append($ulTag);
+                    }
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="wrap"></div>
+</body>
+
+</html>
