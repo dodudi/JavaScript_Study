@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            border-radius: 10px;
+            list-style: none;
+        }
+
+        body {
+            background-color: gray;
+        }
+
+        #wrap {
+            margin: 20px auto;
+            min-width: 1230px;
+            max-width: 1900px;
+        }
+
+        header {
+            background-color: antiquewhite;
+            height: 200px;
+        }
+
+        #content {
+            margin: 10px 0px;
+            display: flex;
+            align-self: stretch;
+            background-color: gray;
+        }
+
+        nav {
+            order: 1;
+            flex-basis: 220px;
+            flex-shrink: 0;
+            background-color: white;
+        }
+
+        section {
+            order: 2;
+            flex-grow: 1;
+            flex-basis: 1000px;
+            flex-shrink: 0;
+            margin-left: 10px;
+            background-color: antiquewhite;
+            line-height: 2em;
+        }
+
+        .content_title {
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bolder;
+            line-height: 2em;
+
+            border-bottom: 2px solid black;
+            border-radius: 0px;
+        }
+
+        .content_article {
+            padding-left: 20px;
+            padding-top: 10px;
+            font-size: 1em;
+            line-height: 2em;
+        }
+
+        .content_comment {
+            overflow: hidden;
+
+            background-color: white;
+            border: 1px solid gray;
+            margin: 10px 5px 5px;
+        }
+
+
+
+        #content_textarea {
+            width: calc(100% - 20px);
+            height: 200px;
+            border-radius: 0px;
+            background-color: azure;
+            border: 1px solid gray;
+            resize: none;
+            margin: 10px 10px 0px;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 1.5em;
+
+        }
+
+        .content_comment_area {
+            width: calc(100%-10px);
+            background-color: green;
+            margin: 5px 5px 5px;
+        }
+
+        .comment {
+            display: inline-block;
+            width: calc(100% - 20px);
+            margin: 5px 5px;
+            padding: 5px 5px;
+            background-color: azure;
+        }
+
+        input {
+            float: right;
+            border-radius: 0px;
+            border: 1px solid gray;
+            margin-left: 5px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            width: 150px;
+            height: 25px;
+        }
+
+        .content_nav {
+            padding: 20px;
+            line-height: 1.5em;
+            font-weight: 600;
+        }
+
+        footer {
+            height: 100px;
+            background-color: antiquewhite;
+        }
+
+        .modify {
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+
+        <header>
+
+
+
+        </header>
+
+        <div class="modify">
+
+        </div>
+
+        <div id="content">
+
+            <nav>
+                <ul class="content_nav">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>10</li>
+                    <li>10</li>
+                    <li>10</li>
+                    <li>10</li>
+                    <li>10</li>
+                    <li>10</li>
+                    <li>10</li>
+                    <li>10</li>
+                    <li>10</li>
+                </ul>
+            </nav>
+            <section>
+                <div class="content_title">
+
+                    <p class="conent_title_item">이곳은 제목 부분입니다.</p>
+
+                </div>
+                <div class="content_article">
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                    <p>여기는 바로 내용이 들어가는 부분입니다.</p>
+                </div>
+
+                <div class="content_comment">
+                    <form action="#">
+                        <textarea name="content_textarea" id="content_textarea" cols="30" rows="10"></textarea>
+                        <input type="submit" value="초기화">
+                        <input type="reset" value="등록">
+                    </form>
+                </div>
+
+                <div class="content_comment_area">
+
+                    <div class="comment">
+                        <p>작성자: </p>
+                        <p>작성일: </p>
+                        <hr>
+                        <p>내용: 그래 나도 그랬어</p>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+        <footer>여기는 footer</footer>
+    </div>
+</body>
+
+</html>
